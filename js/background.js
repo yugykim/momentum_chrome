@@ -5,7 +5,6 @@ window.onload = () => {
   async function sendApiRequest() {
     let API_KEY = "yuRZ5ybsxH7EeWZEtDW7aQeZcKw7XLqNGCkhL5Ae";
     let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=2`);
-    console.log(response);
     let data = await response.json();
     console.log(data);
     if (data[0].media_type === "image"){
