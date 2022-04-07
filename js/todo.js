@@ -17,6 +17,13 @@ function deleteToDo(event) {
   saveToDos();
 }
 
+function completedToDo(event) {
+  const li = event.target.parentElement;
+  li.classList.add("completed");
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
+}
+
 
 
 function painTodo(newTodo) {
@@ -24,11 +31,9 @@ function painTodo(newTodo) {
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerHTML = newTodo.text;
-  const button = document.createElement("button");
-  button.innerHTML = "❌";
-  button.addEventListener("click", deleteToDo);
+  span.addEventListener("click", completedToDo);
+  span.addEventListener("dblclick", deleteToDo);
   li.appendChild(span);
-  li.appendChild(button);
   toDoList.appendChild(li);
 }
 

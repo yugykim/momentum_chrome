@@ -7,28 +7,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <title>Momentum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 </head>
 
 <body>
   <div class="content">
-    <form id="login-form" class="hidden">
-      <input type="text" placeholder="What is your name?" maxlength="15" required />
-      <input type="submit" value="Log in" />
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <h2 id="clock">00:00</h2>
-    <form id="todo-form">
-      <input type="text" placeholder="add to do" />
-    </form>
-    <ul id="todo-list">
-    </ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
+    <div class="first-container">
+      <form id="" class="hidden">
+        <input type="text" id="text" placeholder="What is your name?" maxlength="15" required />
+        <input type="submit" value="Log in" />
+      </form>
+      <h1 id="greeting" class="hidden"></h1>
+      <h2 id="clock">00:00</h2>
+      <div class="todo">
+        <p id="today-date"></p>
+        <form id="todo-form">
+          <input type="text" placeholder="Today's TO-DO" />
+        </form>
+        <ul id="todo-list">
+        </ul>
+      </div>
     </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
+    <div class="second-container">
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </div>
   <script src="./js/greetings.js"></script>

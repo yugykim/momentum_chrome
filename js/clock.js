@@ -1,5 +1,5 @@
 const clock = document.querySelector("h2#clock");
-const date = new Date();
+const todayDate = document.getElementById("today-date");
 
 function getClock() {
   const date = new Date();
@@ -11,3 +11,11 @@ function getClock() {
 
 getClock();
 setInterval(getClock, 1000);
+
+window.addEventListener("load", (event) => {
+  const date = new Date();
+  const year = String(date.getFullYear()).padStart(2, "0");
+  const hour = String(date.getMonth()).padStart(2, "0");
+  const minute = String(date.getDay()).padStart(2, "0");
+  todayDate.innerHTML = `${year}-${hour}-${minute}`;
+});
