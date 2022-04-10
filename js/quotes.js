@@ -1,14 +1,46 @@
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
+const quote = document.querySelector("#quote");
 
 
 fetch("https://type.fit/api/quotes")
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .then(function(data) {
+  .then(function (data) {
     let todaysQuote = data[Math.floor((Math.random() * data.length))];
-    quote.innerText = todaysQuote.text;
-    author.innerText = todaysQuote.author;
+    let quote = todaysQuote.text === null? "&nbsp;": todaysQuote.text ;
+    let author = todaysQuote.author === null? "&nbsp;": todaysQuote.author;
+    author = " - " + author;
+    typingQuote(quote, author)
   });
+
+function removeQuote() {
+  quote.innerText = "";
+  document.querySelector("#quote").hidden = true;
+  document.querySelector(".container").hidden = false;
+}
+
+setTimeout(removeQuote, 15000);
+
+function typingQuote(q, a) {
+  let quoteAndAuthor = [q, a];
+  let characterCount = 0;
+  for (let i = 0; i < quoteAndAuthor.length; i++) {
+    let sentence = quoteAndAuthor[i];
+    let newContent = '';
+
+    // go through all characters of the sentence
+    for (let j = 0; j < sentence.length; j++) {
+      let substring = sentence.substr(j, 1);
+      // if we have a character, wrap it
+      if (substring !== " ") {
+        newContent += `<span style="--animation-order: ${characterCount};">${substring}</span>`;
+      } else {
+        newContent += "&nbsp;";
+      }
+      characterCount++;
+    }
+    quote.innerHTML += newContent;
+  }
+}
+
 

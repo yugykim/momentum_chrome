@@ -1,5 +1,5 @@
 window.onload = () => {
-  sendApiRequest();
+  setTimeout(sendApiRequest, 12000);
   let image;
   
   async function sendApiRequest() {
@@ -13,12 +13,14 @@ window.onload = () => {
       image = data[1].url;
     }
     
-    
-    document.body.style.backgroundImage = `url(${image})`
+    const content = document.querySelector(".content");
+    content.style.backgroundImage = `url(${image})`
     const bgImage = document.createElement("img");
     console.log(bgImage);
-    document.body.appendChild(bgImage);
-    
+    content.appendChild(bgImage);
+
   }
+
+
 
 };

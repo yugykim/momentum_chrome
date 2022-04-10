@@ -1,5 +1,5 @@
 const clock = document.querySelector("h2#clock");
-const todayDate = document.getElementById("today-date");
+const todayDate = document.getElementById("todo-form");
 
 function getClock() {
   const date = new Date();
@@ -15,7 +15,8 @@ setInterval(getClock, 1000);
 window.addEventListener("load", (event) => {
   const date = new Date();
   const year = String(date.getFullYear()).padStart(2, "0");
-  const hour = String(date.getMonth()).padStart(2, "0");
-  const minute = String(date.getDay()).padStart(2, "0");
-  todayDate.innerHTML = `${year}-${hour}-${minute}`;
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  todayDate.innerHTML = `<input type="text" placeholder="${year}-${month}-${day}" />`;
+  console.log(date.getDate());
 });
