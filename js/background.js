@@ -1,5 +1,5 @@
 window.onload = () => {
-  setTimeout(sendApiRequest, 12000);
+  setTimeout(sendApiRequest, 10000);
   let image;
   
   async function sendApiRequest() {
@@ -20,7 +20,4 @@ window.onload = () => {
     content.appendChild(bgImage);
 
   }
-
-
-
 };

@@ -26,11 +26,11 @@ function completedToDo(event) {
 
 
 
-function painTodo(newTodo) {
+function painTodo(newTodoObj) {
   const li = document.createElement("li");
-  li.id = newTodo.id;
+  li.id = newTodoObj.id;
   const span = document.createElement("span");
-  span.innerHTML = newTodo.text;
+  span.innerHTML = newTodoObj.text;
   span.addEventListener("click", completedToDo);
   span.addEventListener("dblclick", deleteToDo);
   li.appendChild(span);

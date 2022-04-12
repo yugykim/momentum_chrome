@@ -11,7 +11,7 @@ function getClock() {
 
 getClock();
 setInterval(getClock, 1000);
-
+/*
 window.addEventListener("load", (event) => {
   const date = new Date();
   const year = String(date.getFullYear()).padStart(2, "0");
@@ -19,4 +19,4 @@ window.addEventListener("load", (event) => {
   const day = String(date.getDate()).padStart(2, "0");
   todayDate.innerHTML = `<input type="text" placeholder="${year}-${month}-${day}" />`;
   console.log(date.getDate());
-});
+});*/

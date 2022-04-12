@@ -7,8 +7,8 @@ fetch("https://type.fit/api/quotes")
   })
   .then(function (data) {
     let todaysQuote = data[Math.floor((Math.random() * data.length))];
-    let quote = todaysQuote.text === null? "&nbsp;": todaysQuote.text ;
-    let author = todaysQuote.author === null? "&nbsp;": todaysQuote.author;
+    let quote = todaysQuote.text === null ? "" : todaysQuote.text;
+    let author = todaysQuote.author === null ? "" : todaysQuote.author;
     author = " - " + author;
     typingQuote(quote, author)
   });
@@ -16,10 +16,11 @@ fetch("https://type.fit/api/quotes")
 function removeQuote() {
   quote.innerText = "";
   document.querySelector("#quote").hidden = true;
-  document.querySelector(".container").hidden = false;
+  document.querySelector(".inner-container").hidden = false;
+  document.querySelector(".weather").hidden = false;
 }
 
-setTimeout(removeQuote, 15000);
+setTimeout(removeQuote, 12000);
 
 function typingQuote(q, a) {
   let quoteAndAuthor = [q, a];

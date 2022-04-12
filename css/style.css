@@ -39,59 +39,65 @@ body {
 }
 
 .content {
+  width: 100vw;
   height: 100vh;
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center; 
   overflow: hidden;
-  display: flex;
 }
 
-.container {
-  width: 100%;
+#quote {
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+  margin-top: 20rem;
+}
+
+.weather {
+  text-align: right;
+  margin-right: 2rem;
 }
 
 .first-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-#quote {
-  display: flex;
+  height: 95vh;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 1rem;
-  flex: 3;
-  color: black;
+  flex-direction: column;
 }
 
 #clock{
-  font-size: 2.3rem;
-  margin-left: 2rem;
+  display: flex;
+  font-size: 8rem;
+  align-content: flex-end;
+  margin: 0;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 #todo-form input {
-  border: 1.5px solid silver;
+  border: 1.5px solid white;
   border-top: none;
   border-left: none;
   border-right: none;
-  height: 1.5rem;
   text-align: center;
   background: transparent;
   color: white;
-  margin-top: 2rem;
 }
 
 ul {
   list-style-type: none;
+
 }
 
 li {
   margin-bottom: 10px;
-  margin-left: -1rem;
+  margin-right: 3rem;
 }
 
 .completed {
@@ -103,8 +109,4 @@ li {
   margin-left: 8px;
   margin-bottom: -1px;
   color: silver;
-}
-
-.todo {
-  margin: 0.8rem 2rem;
 }
